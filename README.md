@@ -22,6 +22,6 @@
     - Run: `minikube tunnel`
         - This creates a tunnel between the minikube kubernetes cluster and your local machine, **you must leave the terminal window open for this to work**
         - You can see the external IP being created by this when you run `kubectl get services`
-    - In your browser go to: [localhost:8080](localhost:8080) or [127.0.0.1:8080](127.0.0.1:8080)
+    - In your browser go to: [localhost:8080](http://localhost:8080) or [127.0.0.1:8080](http://127.0.0.1:8080)
 
 
