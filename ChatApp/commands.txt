@@ -1,0 +1,14 @@
+change chatapp-86c89c8579-vlh9b below to the correct pod
+
+kubectl expose po chatapp-86c89c8579-vlh9b --port 8080 --type=NodePort
+kubectl port-forward service/chatapp-86c89c8579-vlh9b 8081:8080
+
+OR
+Follow this: https://stackoverflow.com/questions/40767164/expose-port-in-minikube#:~:text=As%20minikube%20is%20exposing%20access%20via%20nodeIP%3AnodePort%20and,This%20would%20expose%20the%20service%20on%20localhost%3A27017%2C%20FWIW
+
+kubectl expose deployment chatapp --type=LoadBalancer --port=8080
+minikube tunnel
+kubectl get services deploymentName
+
+
+and see that you can access the app at 127.0.0.1:8080

@@ -1,0 +1,1 @@
+[Medium link](https://medium.com/geekculture/how-to-deploy-spring-boot-and-mongodb-to-kubernetes-minikube-71c92c273d5e)

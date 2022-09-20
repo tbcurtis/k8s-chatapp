@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatapp
+spec:
+  selector:
+      matchLabels:
+        app: chatapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: chatapp
+    spec:
+      containers:
+        - name: chatapp
+          image: bjnmc/chatapp
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 8080
+          env:
+            - name: MONGO_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: mongodb-config  
+                  key: database
+            - name: MONGO_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: mongodb-config 
+                  key: host
+                  
