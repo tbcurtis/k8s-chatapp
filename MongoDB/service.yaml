@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: mongodb
-  name: mongo
+  name: mongo #this is the host name which is used by the chatapp to connect to mongoDB
 spec:
   ports:
   - port: 27017

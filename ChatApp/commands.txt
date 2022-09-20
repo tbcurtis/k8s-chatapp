@@ -8,7 +8,7 @@ Follow this: https://stackoverflow.com/questions/40767164/expose-port-in-minikub
 
 kubectl expose deployment chatapp --type=LoadBalancer --port=8080
 minikube tunnel
-kubectl get services deploymentName
+kubectl get services chatapp
 
 
 and see that you can access the app at 127.0.0.1:8080
