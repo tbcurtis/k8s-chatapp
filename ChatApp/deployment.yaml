@@ -6,7 +6,7 @@ spec:
   selector:
       matchLabels:
         app: chatapp
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: chatapp
-          image: bjnmc/chatapp:config
-          imagePullPolicy: IfNotPresent
+          image: bjnmc/chatapp:configActuator
+          imagePullPolicy: Always
           ports:
           - containerPort: 8080
           env:
