@@ -1,5 +1,5 @@
-[Medium link](https://medium.com/geekculture/how-to-deploy-spring-boot-and-mongodb-to-kubernetes-minikube-71c92c273d5e)
-
+- [Deploying SpringBoot and MongoDB link](https://medium.com/geekculture/how-to-deploy-spring-boot-and-mongodb-to-kubernetes-minikube-71c92c273d5e)
+- [Grafana Medium Link Setup](https://medium.com/codex/setup-grafana-loki-on-local-k8s-cluster-minikube-90450e9896a8)
 ## Build and create MongoDB:
 - In your terminal change to the MongoDB folder: `cd ChatApp/MongoDB`
 - Run `kubectl apply -f .`
@@ -25,3 +25,6 @@
     - In your browser go to: [localhost:8080](http://localhost:8080) or [127.0.0.1:8080](http://127.0.0.1:8080)
 
 
+### Grafana Setup
+- To port forward for grafana, use this command: `kubectl port-forward service/grafana 80:80 --namespace=monitoring`
+- Then go to [localhost:80](http://localhost:80)
