@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: chatapp
-          image: bjnmc/chatapp
+          image: bjnmc/chatapp:config
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 8080
@@ -29,4 +29,24 @@ spec:
                 configMapKeyRef:
                   name: mongodb-config 
                   key: host
+            - name: MONGO_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: mongodb-config 
+                  key: port
+            - name: MONGO_AUTH
+              valueFrom:
+                configMapKeyRef:
+                  name: mongodb-config 
+                  key: auth
+            - name: MONGO_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: k8-training
+                  key:  MONGO_ROOT_USERNAME
+            - name: MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: k8-training
+                  key:  MONGO_ROOT_PASSWORD
                   
