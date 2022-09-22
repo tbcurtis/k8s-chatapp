@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: chatapp
-          image: bjnmc/chatapp:configActuator
+          #image: bjnmc/chatapp:configActuator
+          image: bjnmc/chatapp:rabbit
           imagePullPolicy: Always
           ports:
           - containerPort: 8080
@@ -58,4 +59,20 @@ spec:
                 secretKeyRef:
                   name: k8-training
                   key:  MONGO_ROOT_PASSWORD
+            ## For RabbitMQ
+            - name: RABBITMQ_HOST
+              valueFrom: 
+                secretKeyRef: 
+                  name: stomp-messagebroker-default-user
+                  key: host
+            - name: RABBITMQ_USERNAME
+              valueFrom: 
+                secretKeyRef: 
+                  name: stomp-messagebroker-default-user
+                  key: username
+            - name: RABBITMQ_PASSWORD
+              valueFrom: 
+                secretKeyRef: 
+                  name: stomp-messagebroker-default-user
+                  key: password
                   
