@@ -53,8 +53,8 @@ spec:
           timeoutSeconds: 5
           successThreshold: 1
           failureThreshold: 6
-      nodeSelector:
-        kubernetes.io/hostname: minikube
+      #nodeSelector:
+       # kubernetes.io/hostname: minikube
       volumes:
       - name: k8-training
         secret:
